@@ -32,7 +32,7 @@ class CustomButton extends StatelessWidget {
       height: height, // Altura configurável
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
-          backgroundColor: backgroundColor,
+          backgroundColor: backgroundColor ?? Theme.of(context).colorScheme.onSurface,
           shape: RoundedRectangleBorder(
             borderRadius: borderRadius,
             side: BorderSide(color: borderColor ?? Theme.of(context).colorScheme.onSurface),

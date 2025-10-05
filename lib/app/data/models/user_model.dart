@@ -15,11 +15,11 @@ class UserModel {
   }
   /*
 {
-  "genero": "",
-  "GDA": 1,
-  "peso": 2.3,
-  "altura": "hello",
-  "idade": "hello",
+  "genero": "",              // "masculino" ou "feminino"
+  "GDA": 1,                 //   Gasto calorico diário estimado
+  "peso": 2.3,             // em kg
+  "altura": "180",      // em cm
+  "idade": "25",       // em anos  
   "FA": "hello"
 } 
 */

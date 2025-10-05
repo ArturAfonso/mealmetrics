@@ -1,7 +1,7 @@
 // ignore_for_file: avoid_print
 
 
-import 'package:mealmetrics/app/data/shared/models/refeicao_model.dart';
+import 'package:mealmetrics/app/data/models/refeicao_model.dart';
 
 class DietaUtils {
   static double proteinaGeral(List<RefeicaoModel> refeicoes) {

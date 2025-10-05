@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
-import 'package:mealmetrics/app/modules/onboarding-screen/controllers/pre_onboarding_view.dart';
+import 'package:mealmetrics/app/modules/onboarding-screen/views/pre_onboarding_view.dart';
 
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
