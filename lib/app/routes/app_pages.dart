@@ -1,5 +1,4 @@
 import 'package:get/get.dart';
-import 'package:mealmetrics/app/modules/onboarding-screen/views/pre_onboarding_view.dart';
 
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
@@ -7,6 +6,9 @@ import '../modules/login-screen/bindings/login_screen_binding.dart';
 import '../modules/login-screen/views/login_sreen_view.dart';
 import '../modules/onboarding-screen/bindings/onboarding_screen_binding.dart';
 import '../modules/onboarding-screen/views/onboarding_screen_view.dart';
+import '../modules/onboarding-screen/views/pre_onboarding_view.dart';
+import '../modules/profile-setup-screen/bindings/profile_setup_screen_binding.dart';
+import '../modules/profile-setup-screen/views/profile_setup_screen_view.dart';
 import '../modules/splash-screen/bindings/splash_screen_binding.dart';
 import '../modules/splash-screen/views/splash_screen_view.dart';
 
@@ -38,10 +40,15 @@ class AppPages {
       page: () => const OnboardingScreenView(),
       binding: OnboardingScreenBinding(),
     ),
-     GetPage(
+    GetPage(
       name: _Paths.PRE_ONBOARDING_SCREEN,
       page: () => const PreOnboardingView(),
       binding: OnboardingScreenBinding(),
+    ),
+    GetPage(
+      name: _Paths.PROFILE_SETUP_SCREEN,
+      page: () => const ProfileSetupScreenView(),
+      binding: ProfileSetupScreenBinding(),
     ),
   ];
 }

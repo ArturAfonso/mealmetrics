@@ -46,7 +46,7 @@ final ThemeData appLightTheme = ThemeData(
     foregroundColor: _lightColorScheme.onPrimary,
   ),
   segmentedButtonTheme: _segmentedButtonTheme,
-  dialogTheme: DialogTheme(backgroundColor: Colors.white),
+  dialogTheme: const DialogThemeData(backgroundColor: Colors.white),
 );
 
 final ThemeData appDarkTheme = ThemeData(
@@ -91,7 +91,7 @@ final ThemeData appDarkTheme = ThemeData(
     iconTheme: IconThemeData(color: _darkColorScheme.onPrimary),
   ),
   segmentedButtonTheme: _segmentedButtonTheme,
-  dialogTheme: const DialogTheme(backgroundColor: Colors.black),
+  dialogTheme:  const DialogThemeData(backgroundColor: Colors.black),
 );
 
 SegmentedButtonThemeData get _segmentedButtonTheme => SegmentedButtonThemeData(

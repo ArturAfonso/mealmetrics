@@ -38,6 +38,7 @@ class OnboardingScreenView extends GetView<OnboardingScreenController> {
 
     List<PageViewModel> pages = [
       PageViewModel(
+      
         title: "Registre suas refeições de forma simples",
         body: "Anote cada refeição e acompanhe se está dentro ou fora da sua dieta.",
         image: buildImage('onboarding-track-DOgvR4yy.png'),
@@ -54,7 +55,7 @@ class OnboardingScreenView extends GetView<OnboardingScreenController> {
         body: "Pequenos passos diários levam a grandes resultados.",
         image: buildImage('onboarding-success-Oll7SjvD.png'),
         decoration: pageDecoration,
-      ),
+      ),/* 
       PageViewModel(
         title: "Full Screen Page",
         body:
@@ -110,13 +111,55 @@ class OnboardingScreenView extends GetView<OnboardingScreenController> {
         ),
         image: buildImage('torcao.png'),
         reverse: true,
-      ),
+      ), */
     ];
     return IntroductionScreen(
       key: controller.introKey,
       globalBackgroundColor: Colors.white,
       allowImplicitScrolling: false,
-
+      
+      globalHeader: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.only(top: 16, left: 16),
+          child: Align(
+            alignment: Alignment.topLeft,
+            child: Container(
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(20),
+                /* boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withOpacity(0.1),
+                    blurRadius: 4,
+                    offset: const Offset(0, 2),
+                  ),
+                ], */
+              ),
+              child: IconButton(
+                onPressed: () {
+                  final currentPage = controller.introKey.currentState?.getCurrentPage() ?? 0;
+                  if (currentPage > 0) {
+                    controller.introKey.currentState?.previous();
+                  } else {
+                    // Se está na primeira página, pode voltar para a tela anterior ou sair
+                    Get.back(); // ou Navigator.pop(context);
+                  }
+                },
+                icon: Icon(
+                  Icons.arrow_back_ios,
+                  color: Theme.of(context).colorScheme.onSurface,
+                  size: 20,
+                ),
+                padding: const EdgeInsets.all(8),
+                constraints: const BoxConstraints(
+                  minWidth: 40,
+                  minHeight: 40,
+                ),
+              ),
+            ),
+          ),
+        ),
+      ),
       infiniteAutoScroll: false,
       /*  globalHeader: Align(
         alignment: Alignment.topRight,
@@ -132,7 +175,14 @@ class OnboardingScreenView extends GetView<OnboardingScreenController> {
         child: CustomButton(
           text: 'Continuar',
           onPressed: () {
-            controller.introKey.currentState?.next();
+            
+             final currentPage = controller.introKey.currentState?.getCurrentPage() ?? 0;
+                  if (currentPage <2) {
+                    controller.introKey.currentState?.next();
+                  } else {
+                   
+                    Get.toNamed(Routes.PROFILE_SETUP_SCREEN); 
+                  }
           },
         ),
       ),
